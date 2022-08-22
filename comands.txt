@@ -1,0 +1,52 @@
+Speech Recognition Module:
+1-check state
+2-bathroom
+3-switch alarm
+4-exit
+5-first
+6-second
+7-third
+8-fourth
+9-temperature
+10-humidity
+11-all
+12-on
+13-off
+
+1 -> 5: Check state of first window (1)
+1 -> 6: Check state of second window (2)
+1 -> 7: Check state of third window (3)
+1 -> 8: Check state of fourth window (4)
+1 -> 11: Check state of all windows (5)
+2 -> 5 -> 9: Check temperature of first bathroom (6)
+2 -> 5 -> 10: Check humidity of first bathroom (7)
+2 -> 6 -> 9: Check temperature of second bathroom (8)
+2 -> 6 -> 10: Check humidity of second bathroom (9)
+3 -> 12: Switch on the alarm (10)
+3 -> 13: Switch off the alarm (11)
+
+=====================================================
+
+VOSK:
+1-window number 1 (1)
+2-window number 2 (2)
+3-window number 3 (3)
+4-window number 4 (4)
+5-switch on the alarm (10)
+6-switch off the alarm (11)
+7-first bathroom: Check temperature and humidity of B1 (12)
+8-second bathroom: Check temperature and humidity of B2 (13)
+9-each window (5)
+
+====================================================
+
+Google Speech to Text API:
+1-first window (1)
+2-second window (2)
+3-third window (3)
+4-fourth window (4)
+5-all windows (5)
+6-first bathroom (12)
+7-second bathroom (13)
+8-switch on the alarm (10)
+9-switch off the alarm (11)
