@@ -42,7 +42,7 @@ void loop(){
   RF24NetworkHeader header(centralNode);
   if(batteryLevel >= 30){
     analogValue = analogRead(A3);
-    voltage = analogValue * (7.2/1024.0); // zamień tutej 3.3 na ta maksymalno wartość napiyncia
+    voltage = analogValue * (7.2/1024.0);
     if(whichNode == true) voltage += 1000.0;
     //Serial.print("Napiecie: ");           //wyświetlenie napiecia
     //Serial.print(voltage);
@@ -68,16 +68,12 @@ void loop(){
     t += 1000.0;
     h += 1000.0;
   }
-  //if(batteryLevel == 0 || abs(oldT - t) > 1.0){
-  //if(batteryLevel == 0){
   if((batteryLevel % 2) == 0){
     radio.powerUp();
     windows.write(header, &t, sizeof(t));  
     radio.powerDown();
   }
 
-  //else if(batteryLevel == 15 || abs(oldH - h) > 5.0){
-  //else if(batteryLevel == 15){
   else{
     radio.powerUp();
     windows.write(header, &h, sizeof(h));  
@@ -86,5 +82,4 @@ void loop(){
   
   batteryLevel++;
   LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);
-  //delay(2000);
 }
